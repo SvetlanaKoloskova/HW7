@@ -1,6 +1,6 @@
 //Задача 1
 
-let str = 'js';
+/*let str = 'js';
 console.log(str.toUpperCase());
 
 //Задача 2
@@ -39,9 +39,9 @@ function random() {
 //Задача 6
 
 function getRandomArrNumbers(n) {
-    length = Math.floor(n/2);
+    length = Math.floor(n / 2);
     let arr6 = [];
-    for(let i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
         let a = Math.floor(Math.random() * (n - 0) + 0);
         arr6.push(a);
     }
@@ -52,7 +52,7 @@ function getRandomArrNumbers(n) {
 
 function randomInteger(a, b) {
     let min = Math.min(a, b);
-    let max = Math.max(a,b);
+    let max = Math.max(a, b);
     return Math.floor(Math.random() * (max - min) + min);
 }
 
@@ -70,11 +70,36 @@ console.log(currentDate);
 //Задание 10
 
 const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
-const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];*/
 
-let myDate1 = new Date();
+/*let myDate1 = new Date();
 let fullDate = 'Дата: ' + myDate.getDate() + ' ' + months[myDate.getMonth()] + ' ' +myDate.getFullYear() + ' - это ' + days[myDate.getDay()];
 let fullTime = 'Время: ' + myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds(); 
 
 console.log(fullDate);
-console.log(fullTime);
+console.log(fullTime);*/
+
+/*Написать функцию, которая на вход принимает дату, а возвращает ее отображение в виде:
+
+Дата: <число> <месяц на русском> <год> - это <день недели на русском>.
+
+Время: <часы>:<минуты>:<секунды>
+
+Время, которое будет выведено, также хранится в объекте Date.*/
+
+
+
+const fullDate = (year, month, date, hours, minutes, seconds, milliseconds) => {
+
+    const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+    const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+
+    month = month - 1;
+    let myDate = new Date(year, month, date, hours, minutes, seconds, milliseconds);
+    let fullDate = "Дата: " + myDate.getDate() + " " + months[myDate.getMonth()] + " " + myDate.getFullYear() + " - " + days[myDate.getDay()];
+    let fullDateTime = "Время: " + myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds();
+    console.log(fullDate);
+    console.log(fullDateTime);
+}
+
+fullDate(2023, 3, 12, 10, 26, 30, 10);
